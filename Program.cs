@@ -99,19 +99,19 @@ void Status()
 string NazwaPokoju(int numer)
 {
     // TODO A1: zwroc nazwe dla 1, 2, 3, 4 oraz wartosc dla nieznanego numeru.
-    string NazwaPokoju = "";
+    string Nazwapokoju = "";
     if(numer == 1){
-        NazwaPokoju = "Recepcja";
+        Nazwapokoju = "Recepcja";
     }else if(numer == 2){
-        NazwaPokoju = "Magazyn";
+        Nazwapokoju = "Magazyn";
     }else if(numer == 3){
-        NazwaPokoju = "Serwerownia";
+        Nazwapokoju = "Serwerownia";
     }else if(numer == 4){
-        NazwaPokoju = "Wyjście";
+        Nazwapokoju = "Wyjście";
     }else{
-        NazwaPokoju = "Nieznany";
+        Nazwapokoju = "Nieznane pomieszczenie";
     }
-    return NazwaPokoju;
+    return Nazwapokoju;
 }
 
 void Pomoc()
@@ -136,13 +136,38 @@ void Mapa()
 {
     // TODO A3: petla for, numery 1..4, jeden znacznik aktualnego pokoju.
     Console.WriteLine("TODO A: mapa.");
+    for(int numer=1; numer<=4; numer++){
+        if(pokoj == numer){
+        Console.WriteLine("Pokój "+numer+": "+NazwaPokoju(numer)+" <-- jesteś tutaj");
+        }else{
+            Console.WriteLine("Pokój "+numer+": "+NazwaPokoju(numer));
+        }
+    }
 }
 
 void Rozejrzyj()
 {
     Console.WriteLine("Jestes w: " + NazwaPokoju(pokoj));
     // TODO A4: opis zalezy od pokoju oraz obecnosci przedmiotow/zasilania.
-    Console.WriteLine("TODO A: opis pokoju.");
+    if(NazwaPokoju(pokoj) == "Recepcja"){
+        if(karta == false){
+            Console.WriteLine("karta jest na biurku");
+        }else{
+            Console.WriteLine("jest biurko");
+        }
+    }else if((NazwaPokoju(pokoj) == "Magazyn")){
+        if(bezpiecznik == false && zasilanie == false){
+            Console.WriteLine("Bezpiecznik jest na półce");
+        }else{
+            Console.WriteLine("Półki");
+        }
+    }else if((NazwaPokoju(pokoj) == "Serwerownia")){
+        if(zasilanie){
+            Console.WriteLine("Zasialnie przywrócone");
+        }else{
+            Console.WriteLine("Brak zasilania");
+        }
+    }
 }
 
 // SEKCJA B: RUCH. Wlasciciel: osoba B.
