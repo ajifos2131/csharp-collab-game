@@ -125,10 +125,36 @@ void Rozejrzyj()
 // SEKCJA B: RUCH. Wlasciciel: osoba B.
 void Idz(string kierunek)
 {
+    int nastepnyPokoj = pokoj;
     // TODO B1: odrzuc ruch po zakonczeniu gry (return).
+    if(koniec == true){
+        return;
+    }else{
     // TODO B2: policz nastepnyPokoj, nie zmieniaj jeszcze wspolnego pokoj.
     // TODO B3: odrzuc nieznany kierunek i ruch poza pokoje 1..4.
+        if (kierunek == "prawo"){
+            if(pokoj == 4){
+                Console.WriteLine("Nieznany pokoj. Zostajesz na Wyjściu.");
+                // energia += 1;
+                return;
+            }else{
+                nastepnyPokoj += 1;
+            }
+        }else if(kierunek == "lewo"){
+            if(pokoj == 1){
+                Console.WriteLine("Nieznany pokoj. Zostajesz na Recepcji.");
+                // energia += 1;
+                return;
+            }else{
+                nastepnyPokoj -= 1;
+            }
+        }
+
     // TODO B4: zatwierdz pokoj, wywolaj Rozejrzyj i raz ZakonczTure.
+        pokoj = nastepnyPokoj;
+        Rozejrzyj();
+        ZakonczTure();
+    }
     Console.WriteLine("TODO B: ruch " + kierunek);
 }
 
