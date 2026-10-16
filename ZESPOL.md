@@ -1,16 +1,16 @@
 # Umowa zespołu
 
-Nazwa zespołu: …
-Adres repozytorium: …
-Wspólny TargetFramework: …
-Lider pierwszej integracji: …
-Autor zapisu TESTY.md: …
+Nazwa zespołu: VOID
+Adres repozytorium: https://github.com/ajifos2131/csharp-collab-game
+Wspólny TargetFramework: net10.0
+Lider pierwszej integracji: Sonia
+Autor zapisu TESTY.md: ...
 
 | Osoba | Sekcja | Branch | Osoba sprawdzająca |
 |---|---|---|---|
-| … | … | … | … |
-| … | … | … | … |
-| … | … | … | … |
+| Julek | A | . | Sonia |
+| Sonia | B | … | Sonia |
+| Milosz | C | … | Sonia |
 
 Nie zmieniamy kontraktu bez uzgodnienia. Nie formatujemy całego Program.cs.
 
