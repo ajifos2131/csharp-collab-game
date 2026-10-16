@@ -99,7 +99,19 @@ void Status()
 string NazwaPokoju(int numer)
 {
     // TODO A1: zwroc nazwe dla 1, 2, 3, 4 oraz wartosc dla nieznanego numeru.
-    return "Pokoj " + numer;
+    string NazwaPokoju = "";
+    if(numer == 1){
+        NazwaPokoju = "Recepcja";
+    }else if(numer == 2){
+        NazwaPokoju = "Magazyn";
+    }else if(numer == 3){
+        NazwaPokoju = "Serwerownia";
+    }else if(numer == 4){
+        NazwaPokoju = "Wyjście";
+    }else{
+        NazwaPokoju = "Nieznany";
+    }
+    return NazwaPokoju;
 }
 
 void Pomoc()
