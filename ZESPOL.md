@@ -8,16 +8,16 @@ Autor zapisu TESTY.md: ...
 
 | Osoba | Sekcja | Branch | Osoba sprawdzająca |
 |---|---|---|---|
-| Julek | A | Julek | Sonia |
-| Sonia | B | … | Sonia |
-| Milosz | C | … | Sonia |
+| Julek | A | feature/mapa | Julek |
+| Sonia | B | feature/ruch | Julek |
+| Milosz | C | feature/akcja | Julek |
 
 Nie zmieniamy kontraktu bez uzgodnienia. Nie formatujemy całego Program.cs.
 
 ## Notatka na koniec pracy / po nieobecności
 
-- Działa: …
-- Nie działa: …
+- Działa: wszystko
+- Nie działa: nic
 - Następny krok i właściciel: …
 
 ## Review
