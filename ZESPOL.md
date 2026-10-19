@@ -8,7 +8,7 @@ Autor zapisu TESTY.md: ...
 
 | Osoba | Sekcja | Branch | Osoba sprawdzająca |
 |---|---|---|---|
-| Julek | A | . | Sonia |
+| Julek | A | Julek | Sonia |
 | Sonia | B | … | Sonia |
 | Milosz | C | … | Sonia |
 
