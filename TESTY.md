@@ -4,15 +4,15 @@ Każdą próbę zaczynamy od start. Po sekwencji wpisujemy status. Komendy z tab
 
 | Nr | Próba i komendy po start | Oczekiwane | Otrzymane / osoba |
 |---|---|---|---|
-| 1 | mapa, pomoc, opis, status | 4 pokoje, 1 znacznik przy recepcji; energia 10 | … |
-| 2 | lewo, gora, pusty Enter | Pokój 1, energia 10 | … |
-| 3 | prawo | Pokój 2, energia 9 | … |
-| 4 | prawo, prawo, prawo, prawo | Pokój 4, energia 7; ostatni ruch odrzucony | … |
-| 5 | karta, karta | Karta True, energia 9 | … |
-| 6 | bezpiecznik | Bezpiecznik False, energia 10 | … |
-| 7 | prawo, prawo, napraw | Pokój 3, energia 8, zasilanie False | … |
-| 8 | karta, prawo, prawo, prawo, wyjdz | Brak zasilania; pokój 4, energia 6, koniec False | … |
-| 9 | prawo, bezpiecznik, prawo, napraw, prawo, wyjdz | Brak karty; pokój 4, energia 5, koniec False | … |
+| 1 | mapa, pomoc, opis, status | 4 pokoje, 1 znacznik przy recepcji; energia 10 | Działa bez błędów |
+| 2 | lewo, gora, pusty Enter | Pokój 1, energia 10 | wiadomosc nieznane brak ruchu: Poprawne działanie |
+| 3 | prawo | Pokój 2, energia 9 | Poprawne działanie |
+| 4 | prawo, prawo, prawo, prawo | Pokój 4, energia 7; ostatni ruch odrzucony | Poprawne działanie |
+| 5 | karta, karta | Karta True, energia 9 | Poprawne zabranie karty i wiadomość o braku karty do zabrania |
+| 6 | bezpiecznik | Bezpiecznik False, energia 10 | Poprawne działanie |
+| 7 | prawo, prawo, napraw | Pokój 3, energia 8, zasilanie False | Poprawne działanie |
+| 8 | karta, prawo, prawo, prawo, wyjdz | Brak zasilania; pokój 4, energia 6, koniec False | Poprawne działanie |
+| 9 | prawo, bezpiecznik, prawo, napraw, prawo, wyjdz | Brak karty; pokój 4, energia 5, koniec False | Poprawne diałanie |
 | 10 | karta, prawo, bezpiecznik, prawo, napraw, lewo, bezpiecznik | Energia 4, zasilanie True, bezpiecznik False; nie odradza się | … |
 | 11 | Znajdźcie drogę zwycięską i zapiszcie ją poniżej | Jedna wygrana, bez jednoczesnej przegranej | … |
 | 12 | Pięć razy para prawo, lewo | Pokój 1, energia 0, koniec True, wygrana False | … |
@@ -27,8 +27,8 @@ Każdą próbę zaczynamy od start. Po sekwencji wpisujemy status. Komendy z tab
 
 ## Znaleziony błąd
 
-- Wersja/commit: …
-- Kroki od startu: …
+- Wersja/commit: brak
+- Kroki od startu: 
 - Oczekiwane: …
 - Rzeczywiste: …
 - Poprawka i ponowna próba: …
