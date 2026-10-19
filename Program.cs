@@ -135,9 +135,66 @@ void Idz(string kierunek)
 // SEKCJA C: PRZEDMIOTY I WYGRANA. Wlasciciel: osoba C.
 void Akcja(string co)
 {
-    // TODO C1: odrzuc akcje po zakonczeniu gry.
-    // TODO C2: obsluz karta, bezpiecznik, napraw, wyjdz zgodnie z kontraktem.
-    // TODO C3: przy odmowie wypisz powod i wykonaj return.
-    // TODO C4: tylko po udanej akcji wywolaj raz ZakonczTure.
-    Console.WriteLine("TODO C: akcja " + co);
+    if (koniec)
+    {
+        Console.WriteLine("Gra jest juz zakonczona. Wpisz start, aby zagrac ponownie.");
+        return;
+    }
+    else if (co == "karta")
+    {
+        if (pokoj != 1 || karta)
+        {
+            Console.WriteLine("Tutaj nie ma karty do zabrania.");
+            return;
+        }
+
+        karta = true;
+        Console.WriteLine("Zabierasz karte.");
+    }
+
+    else if (co == "bezpiecznik")
+    {
+        if (pokoj != 2 || bezpiecznik || zasilanie)
+        {
+            Console.WriteLine("Nie mozesz zabrac bezpiecznika.");
+            return;
+        }
+
+        bezpiecznik = true;
+        Console.WriteLine("Zabierasz bezpiecznik.");
+    }
+
+    else if (co == "napraw")
+    {
+        if (pokoj != 3 || !bezpiecznik || zasilanie)
+        {
+            Console.WriteLine("Nie mozesz naprawic zasilania. Potrzebujesz bezpiecznika i wylaczonego zasilania.");
+            return;
+        }
+
+        bezpiecznik = false;
+        zasilanie = true;
+        Console.WriteLine("Montujesz bezpiecznik. Zasilanie zostalo przywrocone.");
+    }
+
+    else if (co == "wyjdz")
+    {
+        if (pokoj != 4 || !karta || !zasilanie)
+        {
+            Console.WriteLine("Nie mozesz otworzyc drzwi. Potrzebujesz karty i dzialajacego zasilania.");
+            return;
+        }
+
+        wygrana = true;
+        koniec = true;
+        Console.WriteLine("Udało się wyjść!");
+    }
+    else
+    {
+        Console.WriteLine("Nieznana akcja.");
+        return;
+    }
+
+    ZakonczTure();
 }
+
