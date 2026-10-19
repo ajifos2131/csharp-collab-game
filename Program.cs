@@ -83,11 +83,29 @@ void ZakonczTure()
     }
 }
 
+// tworzenie pasku energii
+string PasekEnergii()
+{
+    string pasek = "";
+    int miejsca = MAKS_ENERGIA;
+    for (int i = 0; i < energia; i ++){
+        pasek += "#";
+        miejsca -= 1;
+    }
+
+    for (int i = 0; i < miejsca; i ++){
+        pasek += ".";
+    }
+
+    return pasek;
+}
+
 // Status jest gotowy: sluzy do testow, zanim autor mapy skonczy swoja sekcje.
 void Status()
 {
     Console.WriteLine("Pokoj: " + pokoj);
-    Console.WriteLine("Energia: " + energia + "/" + MAKS_ENERGIA);
+    // Console.WriteLine("Energia: " + energia + "/" + MAKS_ENERGIA);
+    Console.WriteLine("Energia: " + PasekEnergii());
     Console.WriteLine("Karta: " + karta);
     Console.WriteLine("Bezpiecznik: " + bezpiecznik);
     Console.WriteLine("Zasilanie: " + zasilanie);
