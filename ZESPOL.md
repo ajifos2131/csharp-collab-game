@@ -4,7 +4,7 @@ Nazwa zespołu: VOID
 Adres repozytorium: https://github.com/ajifos2131/csharp-collab-game
 Wspólny TargetFramework: net10.0
 Lider pierwszej integracji: Sonia
-Autor zapisu TESTY.md: ...
+Autor zapisu TESTY.md: Julek
 
 | Osoba | Sekcja | Branch | Osoba sprawdzająca |
 |---|---|---|---|
