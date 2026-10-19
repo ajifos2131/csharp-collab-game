@@ -29,6 +29,6 @@ Każdą próbę zaczynamy od start. Po sekwencji wpisujemy status. Komendy z tab
 
 - Wersja/commit: brak
 - Kroki od startu: 
-- Oczekiwane: …
-- Rzeczywiste: …
-- Poprawka i ponowna próba: …
+- Oczekiwane: spełnione
+- Rzeczywiste: spełnione 
+- Poprawka i ponowna próba: brak
