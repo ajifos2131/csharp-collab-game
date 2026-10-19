@@ -118,10 +118,10 @@ void Pomoc()
 {
     // TODO A2: wypisz wszystkie komendy oraz koszt czynnosci.
     Console.WriteLine("--- Komendy i koszt ---");
-    Console.WriteLine("pomoc - koszt: 1");
-    Console.WriteLine("status - koszt: 1");
-    Console.WriteLine("mapa - koszt: 1");
-    Console.WriteLine("opis - koszt: 1");
+    Console.WriteLine("pomoc - koszt: 0");
+    Console.WriteLine("status - koszt: 0");
+    Console.WriteLine("mapa - koszt: 0");
+    Console.WriteLine("opis - koszt: 0");
     Console.WriteLine("lewo - koszt: 1");
     Console.WriteLine("prawo - koszt: 1");
     Console.WriteLine("karta - koszt: 1");
