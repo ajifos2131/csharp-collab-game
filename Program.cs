@@ -9,7 +9,7 @@ bool bezpiecznik = false;
 bool zasilanie = false;
 bool koniec = false;
 bool wygrana = false;
-
+int liczbaRuchow;
 // SEKCJA 0: GOTOWY SILNIK NAUCZYCIELA. Nie zmieniaj w zadaniu podstawowym.
 Start();
 while (true)
@@ -54,6 +54,7 @@ while (true)
 
 void Start()
 {
+    liczbaRuchow = 0;
     pokoj = 1;
     energia = MAKS_ENERGIA;
     karta = false;
@@ -106,6 +107,7 @@ void Status()
     Console.WriteLine("Pokoj: " + pokoj);
     // Console.WriteLine("Energia: " + energia + "/" + MAKS_ENERGIA);
     Console.WriteLine("Energia: " + PasekEnergii());
+    Console.WriteLine("Liczba ruchów: " + liczbaRuchow);
     Console.WriteLine("Karta: " + karta);
     Console.WriteLine("Bezpiecznik: " + bezpiecznik);
     Console.WriteLine("Zasilanie: " + zasilanie);
@@ -205,6 +207,7 @@ void Idz(string kierunek)
                 return;
             }else{
                 nastepnyPokoj += 1;
+                liczbaRuchow +=1;
             }
         }else if(kierunek == "lewo"){
             if(pokoj == 1){
@@ -213,6 +216,7 @@ void Idz(string kierunek)
                 return;
             }else{
                 nastepnyPokoj -= 1;
+                liczbaRuchow +=1;
             }
         }
 
