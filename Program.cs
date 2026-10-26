@@ -176,22 +176,36 @@ void Rozejrzyj()
     if(NazwaPokoju(pokoj) == "Recepcja"){
         if(karta == false){
             Console.WriteLine("karta jest na biurku");
+            
         }else{
             Console.WriteLine("jest biurko");
         }
+        Console.WriteLine("W lewo nie ma nic");
+        Console.WriteLine("Nastepny pokoj po skręceniu w prawo to "+NazwaPokoju(pokoj+1));
     }else if((NazwaPokoju(pokoj) == "Magazyn")){
         if(bezpiecznik == false && zasilanie == false){
             Console.WriteLine("Bezpiecznik jest na półce");
+            
         }else{
             Console.WriteLine("Półki");
         }
+        Console.WriteLine("Nastepny pokoj po skręceniu w lewo to "+NazwaPokoju(pokoj-1));
+        Console.WriteLine("Nastepny pokoj po skręceniu w prawo to "+NazwaPokoju(pokoj+1));
     }else if((NazwaPokoju(pokoj) == "Serwerownia")){
         if(zasilanie){
             Console.WriteLine("Zasialnie przywrócone");
+            
         }else{
             Console.WriteLine("Brak zasilania");
         }
+        Console.WriteLine("Nastepny pokoj po skręceniu w lewo to "+NazwaPokoju(pokoj-1));
+        Console.WriteLine("Nastepny pokoj po skręceniu w prawo to "+NazwaPokoju(pokoj+1));
+    }else if ((NazwaPokoju(pokoj) == "Wyjście"))
+    {
+        Console.WriteLine("Nastepny pokoj po skręceniu w lewo to "+NazwaPokoju(pokoj-1));
+        Console.WriteLine("W prawo nie ma nic");
     }
+    
 }
 
 // SEKCJA B: RUCH. Wlasciciel: osoba B.
