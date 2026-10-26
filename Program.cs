@@ -105,14 +105,29 @@ string PasekEnergii()
 void Status()
 {
     Console.WriteLine("Pokoj: " + pokoj);
-    // Console.WriteLine("Energia: " + energia + "/" + MAKS_ENERGIA);
     Console.WriteLine("Energia: " + PasekEnergii());
     Console.WriteLine("Liczba ruchów: " + liczbaRuchow);
     Console.WriteLine("Karta: " + karta);
     Console.WriteLine("Bezpiecznik: " + bezpiecznik);
     Console.WriteLine("Zasilanie: " + zasilanie);
-    Console.WriteLine("Koniec: " + koniec);
-    Console.WriteLine("Wygrana: " + wygrana);
+
+    if (!koniec)
+    {
+        Console.WriteLine("Wynik: Rozgrywka trwa");
+    }
+    else if (wygrana)
+    {
+        Console.WriteLine("Wynik: Zwycięstwo");
+    }
+    else
+    {
+        Console.WriteLine("Wynik: Przegrana");
+    }
+
+    if (koniec)
+    {
+        Console.WriteLine("Zuzyta energia: " + (MAKS_ENERGIA - energia));
+    }
 }
 
 // SEKCJA A: INFORMACJE I MAPA. Wlasciciel: osoba A.
