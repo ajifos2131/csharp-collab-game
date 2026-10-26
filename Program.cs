@@ -137,19 +137,23 @@ string NazwaPokoju(int numer)
 void Pomoc()
 {
     // TODO A2: wypisz wszystkie komendy oraz koszt czynnosci.
-    Console.WriteLine("--- Komendy i koszt ---");
+    Console.WriteLine("----- Komendy i koszt -----");
+    Console.WriteLine("\n--- Informacje ---");
     Console.WriteLine("pomoc - koszt: 0");
     Console.WriteLine("status - koszt: 0");
     Console.WriteLine("mapa - koszt: 0");
     Console.WriteLine("opis - koszt: 0");
+    Console.WriteLine("\n--- Ruch ---");
     Console.WriteLine("lewo - koszt: 1");
     Console.WriteLine("prawo - koszt: 1");
+    Console.WriteLine("wyjdz - wychodzi z budynku jeżeli ma taką opcje:  koszt: 1");
+    Console.WriteLine("start - rozpoczyna rozgrywkę od początkowych ustawień: koszt: 1");
+    Console.WriteLine("\n--- Przedmioty ---");
     Console.WriteLine("karta - koszt: 1");
     Console.WriteLine("bezpiecznik - koszt: 1");
+    Console.WriteLine("\n--- Działanie ---");
     Console.WriteLine("napraw - koszt: 1");
-    Console.WriteLine("wyjdz - koszt: 1");
-    Console.WriteLine("start - koszt: 1");
-    Console.WriteLine("koniec - koszt: 1");
+    Console.WriteLine("koniec - Kończy program: koszt: 1");
 }
 
 void Mapa()
