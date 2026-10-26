@@ -234,9 +234,14 @@ void Akcja(string co)
     }
     else if (co == "karta")
     {
-        if (pokoj != 1 || karta)
+        if (pokoj != 1)
         {
             Console.WriteLine("Tutaj nie ma karty do zabrania.");
+            return;
+        }
+        else if (karta)
+        {
+            Console.WriteLine("już zabrałeś kartę");
             return;
         }
 
@@ -246,9 +251,19 @@ void Akcja(string co)
 
     else if (co == "bezpiecznik")
     {
-        if (pokoj != 2 || bezpiecznik || zasilanie)
+        if (pokoj != 2)
         {
-            Console.WriteLine("Nie mozesz zabrac bezpiecznika.");
+            Console.WriteLine("Tutaj nie ma bezpiecznika do zabrania.");
+            return;
+        }
+        else if(bezpiecznik)
+        {
+            Console.WriteLine("Masz już bezpiecznik.");
+            return;
+        }
+        else if(zasilanie)
+        {
+            Console.WriteLine("Zasilanie jest już włączone.");
             return;
         }
 
@@ -258,9 +273,19 @@ void Akcja(string co)
 
     else if (co == "napraw")
     {
-        if (pokoj != 3 || !bezpiecznik || zasilanie)
+        if (pokoj != 3)
         {
-            Console.WriteLine("Nie mozesz naprawic zasilania. Potrzebujesz bezpiecznika i wylaczonego zasilania.");
+            Console.WriteLine("W tym pokoju nie mozesz naprawic zasilania.");
+            return;
+        }
+        else if(!bezpiecznik)
+        {
+            Console.WriteLine("Nie masz bezpiecznika");
+            return;
+        }
+        else if(zasilanie)
+        {
+            Console.WriteLine("Zasilanie jezt już włączone.");
             return;
         }
 
@@ -271,9 +296,19 @@ void Akcja(string co)
 
     else if (co == "wyjdz")
     {
-        if (pokoj != 4 || !karta || !zasilanie)
+        if (pokoj != 4)
         {
-            Console.WriteLine("Nie mozesz otworzyc drzwi. Potrzebujesz karty i dzialajacego zasilania.");
+            Console.WriteLine("Nie mozesz otworzyc drzwi na tym piętrze.");
+            return;
+        }
+        else if(!karta)
+        {
+            Console.WriteLine("Brakuje ci karty.");
+            return;
+        }
+        else if(!zasilanie)
+        {
+            Console.WriteLine("Brakuje ci zasilania.");
             return;
         }
 
@@ -288,5 +323,8 @@ void Akcja(string co)
     }
 
     ZakonczTure();
+    // Rozróżnij niewłaściwe pomieszczenie, już zabraną kartę, brak bezpiecznika oraz już naprawione zasilanie.
+    // Przy wyjściu rozróżnij brak karty, brak prądu i brak obu. Najpierw obsłuż koniec gry, potem niewłaściwy pokój, następnie pozostałe warunki.
+    // Każda odmowa kończy gałąź przed zmianą stanu i wywołaniem ZakonczTure(). Zachowaj dotychczasowe warunki sukcesu.
 }
 
