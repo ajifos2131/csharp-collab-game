@@ -104,7 +104,7 @@ string PasekEnergii()
 // Status jest gotowy: sluzy do testow, zanim autor mapy skonczy swoja sekcje.
 void Status()
 {
-    Console.WriteLine("Pokoj: " + pokoj);
+    Console.WriteLine("Pokoj: " + NazwaPokoju(pokoj));
     Console.WriteLine("Energia: " + PasekEnergii());
     Console.WriteLine("Liczba ruchów: " + liczbaRuchow);
     Console.WriteLine("Karta: " + karta);
@@ -258,12 +258,11 @@ void Idz(string kierunek)
         Rozejrzyj();
         ZakonczTure();
     }
-    Console.WriteLine("TODO B: ruch " + kierunek);
+    Console.WriteLine("Wykonany ruch w " + kierunek);
 }
 
 // SEKCJA C: PRZEDMIOTY I WYGRANA. Wlasciciel: osoba C.
-void Akcja(string co)
-{
+void Akcja(string co){
     if (koniec)
     {
         Console.WriteLine("Gra jest juz zakonczona. Wpisz start, aby zagrac ponownie.");
