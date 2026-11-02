@@ -24,6 +24,15 @@ int PoliczOdwiedzone(bool[] dane)
 }
 void PokazOdkrycia()
 {
+    
+    for (int i = 0; i < odkrycia.Length; i++)
+    {
+        if (odkrycia[i])
+        {
+            Console.WriteLine("Odkryty pokój: "+pokoje[i]);
+        }
+    }
+    
     Console.WriteLine("Odkryto: "+PoliczOdwiedzone(odkrycia)+"/4 Pokoi");
 }
 Start();
