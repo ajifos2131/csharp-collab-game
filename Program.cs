@@ -286,7 +286,7 @@ void Idz(string kierunek)
         pokoj = nastepnyPokoj;
         ZakonczTure();
         Rozejrzyj();
-        odkrycia[pokoj] = true;
+        odkrycia[pokoj-1] = true;
     }
     Console.WriteLine("Wykonany ruch w " + kierunek);
 }
