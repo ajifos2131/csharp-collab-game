@@ -6,7 +6,6 @@ string[] pokoje = { "Recepcja", "Magazyn", "Serwerownia", "Wyjście" };
 bool[] odkrycia = { false, false, false, false }; 
 int pokoj = 1;
 int energia = MAKS_ENERGIA;
-bool[] odkrycia = new bool[4]; 
 bool karta = false;
 bool bezpiecznik = false;
 bool zasilanie = false;
