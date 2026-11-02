@@ -2,6 +2,8 @@ using System;
 
 // WSPOLNY KONTRAKT. Wszystkie dane inicjalizujemy przed Start().
 const int MAKS_ENERGIA = 10;
+string[] pokoje = { "Recepcja", "Magazyn", "Serwerownia", "Wyjście" };
+bool[] odkrycia = { false, false, false, false }; 
 int pokoj = 1;
 int energia = MAKS_ENERGIA;
 bool[] odkrycia = new bool[4]; 
@@ -161,6 +163,7 @@ string NazwaPokoju(int numer)
     }else{
         Nazwapokoju = "Nieznane pomieszczenie";
     }
+
     return Nazwapokoju;
 }
 
