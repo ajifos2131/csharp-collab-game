@@ -4,6 +4,7 @@ using System;
 const int MAKS_ENERGIA = 10;
 int pokoj = 1;
 int energia = MAKS_ENERGIA;
+bool[] odkrycia = new bool[4]; 
 bool karta = false;
 bool bezpiecznik = false;
 bool zasilanie = false;
@@ -11,6 +12,19 @@ bool koniec = false;
 bool wygrana = false;
 int liczbaRuchow;
 // SEKCJA 0: GOTOWY SILNIK NAUCZYCIELA. Nie zmieniaj w zadaniu podstawowym.
+int PoliczOdwiedzone(bool[] dane)
+{
+    int licznik =0;
+    foreach(bool pokoj in dane){
+        if(pokoj)
+            licznik++;
+    }
+    return licznik;
+}
+void PokazOdkrycia()
+{
+    Console.WriteLine("Odkryto: "+PoliczOdwiedzone(odkrycia)+"/4 Pokoi");
+}
 Start();
 while (true)
 {
@@ -48,6 +62,7 @@ while (true)
         case "bezpiecznik": Akcja("bezpiecznik"); break;
         case "napraw": Akcja("napraw"); break;
         case "wyjdz": Akcja("wyjdz"); break;
+        case "odkrycia":PokazOdkrycia();break;
         default: Console.WriteLine("Nieznane polecenie. Wpisz pomoc."); break;
     }
 }
@@ -169,6 +184,7 @@ void Pomoc()
     Console.WriteLine("\n--- Działanie ---");
     Console.WriteLine("napraw - koszt: 1");
     Console.WriteLine("koniec - Kończy program: koszt: 1");
+    Console.WriteLine("odkrycia - Pokazuje odkryte pokoje");
 }
 
 void Mapa()
