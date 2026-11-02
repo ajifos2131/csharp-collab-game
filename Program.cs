@@ -4,6 +4,7 @@ using System;
 const int MAKS_ENERGIA = 10;
 int pokoj = 1;
 int energia = MAKS_ENERGIA;
+bool[] odkrycia = new bool[4];
 bool karta = false;
 bool bezpiecznik = false;
 bool zasilanie = false;
@@ -14,6 +15,10 @@ int liczbaRuchow;
 Start();
 while (true)
 {
+    for(int i=0;i<length(odkrycia);i++){
+        odkrycia[i] = false;
+    }
+    dokrycia[0] = true;
     Console.Write("> ");
     string? wejscie = Console.ReadLine();
     if (wejscie == null)
@@ -236,7 +241,6 @@ void Idz(string kierunek)
         if (kierunek == "prawo"){
             if(pokoj == 4){
                 Console.WriteLine("Nieznany pokoj. Zostajesz na Wyjściu.");
-                // energia += 1;
                 return;
             }else{
                 nastepnyPokoj += 1;
@@ -245,7 +249,6 @@ void Idz(string kierunek)
         }else if(kierunek == "lewo"){
             if(pokoj == 1){
                 Console.WriteLine("Nieznany pokoj. Zostajesz na Recepcji.");
-                // energia += 1;
                 return;
             }else{
                 nastepnyPokoj -= 1;
