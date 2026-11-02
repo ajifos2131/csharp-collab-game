@@ -2,6 +2,8 @@ using System;
 
 // WSPOLNY KONTRAKT. Wszystkie dane inicjalizujemy przed Start().
 const int MAKS_ENERGIA = 10;
+string[] pokoje = { "Recepcja", "Magazyn", "Serwerownia", "Wyjście" };
+bool[] odkrycia = { false, false, false, false }; 
 int pokoj = 1;
 int energia = MAKS_ENERGIA;
 bool[] odkrycia = new bool[4];
@@ -12,6 +14,28 @@ bool koniec = false;
 bool wygrana = false;
 int liczbaRuchow;
 // SEKCJA 0: GOTOWY SILNIK NAUCZYCIELA. Nie zmieniaj w zadaniu podstawowym.
+int PoliczOdwiedzone(bool[] dane)
+{
+    int licznik =0;
+    foreach(bool pokoj in dane){
+        if(pokoj)
+            licznik++;
+    }
+    return licznik;
+}
+void PokazOdkrycia()
+{
+    
+    for (int i = 0; i < odkrycia.Length; i++)
+    {
+        if (odkrycia[i])
+        {
+            Console.WriteLine("Odkryty pokój: "+pokoje[i]);
+        }
+    }
+    
+    Console.WriteLine("Odkryto: "+PoliczOdwiedzone(odkrycia)+"/4 Pokoi");
+}
 Start();
 while (true)
 {
@@ -53,6 +77,7 @@ while (true)
         case "bezpiecznik": Akcja("bezpiecznik"); break;
         case "napraw": Akcja("napraw"); break;
         case "wyjdz": Akcja("wyjdz"); break;
+        case "odkrycia":PokazOdkrycia();break;
         default: Console.WriteLine("Nieznane polecenie. Wpisz pomoc."); break;
     }
 }
@@ -109,7 +134,7 @@ string PasekEnergii()
 // Status jest gotowy: sluzy do testow, zanim autor mapy skonczy swoja sekcje.
 void Status()
 {
-    Console.WriteLine("Pokoj: " + pokoj);
+    Console.WriteLine("Pokoj: " + NazwaPokoju(pokoj));
     Console.WriteLine("Energia: " + PasekEnergii());
     Console.WriteLine("Liczba ruchów: " + liczbaRuchow);
     Console.WriteLine("Karta: " + karta);
@@ -151,6 +176,7 @@ string NazwaPokoju(int numer)
     }else{
         Nazwapokoju = "Nieznane pomieszczenie";
     }
+
     return Nazwapokoju;
 }
 
@@ -174,6 +200,7 @@ void Pomoc()
     Console.WriteLine("\n--- Działanie ---");
     Console.WriteLine("napraw - koszt: 1");
     Console.WriteLine("koniec - Kończy program: koszt: 1");
+    Console.WriteLine("odkrycia - Pokazuje odkryte pokoje");
 }
 
 void Mapa()
@@ -262,12 +289,11 @@ void Idz(string kierunek)
         Rozejrzyj();
         odkrycia[pokoj] = true;
     }
-    Console.WriteLine("TODO B: ruch " + kierunek);
+    Console.WriteLine("Wykonany ruch w " + kierunek);
 }
 
 // SEKCJA C: PRZEDMIOTY I WYGRANA. Wlasciciel: osoba C.
-void Akcja(string co)
-{
+void Akcja(string co){
     if (koniec)
     {
         Console.WriteLine("Gra jest juz zakonczona. Wpisz start, aby zagrac ponownie.");
