@@ -3,7 +3,6 @@ using System;
 // WSPOLNY KONTRAKT. Wszystkie dane inicjalizujemy przed Start().
 const int MAKS_ENERGIA = 10;
 string[] pokoje = { "Recepcja", "Magazyn", "Serwerownia", "Wyjście" };
-bool[] odkrycia = { false, false, false, false }; 
 int pokoj = 1;
 int energia = MAKS_ENERGIA;
 bool[] odkrycia = new bool[4];
@@ -39,10 +38,10 @@ void PokazOdkrycia()
 Start();
 while (true)
 {
-    for(int i=0;i<length(odkrycia);i++){
+    for(int i=0;i<odkrycia.Length;i++){
         odkrycia[i] = false;
     }
-    dokrycia[0] = true;
+    odkrycia[0] = true;
     Console.Write("> ");
     string? wejscie = Console.ReadLine();
     if (wejscie == null)
