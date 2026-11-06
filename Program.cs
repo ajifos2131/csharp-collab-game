@@ -38,9 +38,6 @@ void PokazOdkrycia()
 Start();
 while (true)
 {
-    for(int i=0;i<odkrycia.Length;i++){
-        odkrycia[i] = false;
-    }
     odkrycia[0] = true;
     Console.Write("> ");
     string? wejscie = Console.ReadLine();
@@ -164,14 +161,8 @@ string NazwaPokoju(int numer)
 {
     // TODO A1: zwroc nazwe dla 1, 2, 3, 4 oraz wartosc dla nieznanego numeru.
     string Nazwapokoju = "";
-    if(numer == 1){
-        Nazwapokoju = "Recepcja";
-    }else if(numer == 2){
-        Nazwapokoju = "Magazyn";
-    }else if(numer == 3){
-        Nazwapokoju = "Serwerownia";
-    }else if(numer == 4){
-        Nazwapokoju = "Wyjście";
+    if(numer >= 1 && numer <= 4){
+        Nazwapokoju = pokoje[numer-1];
     }else{
         Nazwapokoju = "Nieznane pomieszczenie";
     }
@@ -205,12 +196,14 @@ void Pomoc()
 void Mapa()
 {
     // TODO A3: petla for, numery 1..4, jeden znacznik aktualnego pokoju.
-    Console.WriteLine("TODO A: mapa.");
+    Console.WriteLine("Mapa:");
+
     for(int numer=1; numer<=4; numer++){
+        string czyOdrkyty = odkrycia[numer-1] ? " (odkryty) " : " (nieodkryty) ";
         if(pokoj == numer){
-        Console.WriteLine("Pokój "+numer+": "+NazwaPokoju(numer)+" <-- jesteś tutaj");
+            Console.WriteLine("Pokój " + numer + ": " + NazwaPokoju(numer) + czyOdrkyty + " <-- jesteś tutaj");
         }else{
-            Console.WriteLine("Pokój "+numer+": "+NazwaPokoju(numer));
+            Console.WriteLine("Pokój " + numer + ": " + NazwaPokoju(numer) + czyOdrkyty);
         }
     }
 }
@@ -219,6 +212,7 @@ void Rozejrzyj()
 {
     Console.WriteLine("Jestes w: " + NazwaPokoju(pokoj));
     // TODO A4: opis zalezy od pokoju oraz obecnosci przedmiotow/zasilania.
+
     if(NazwaPokoju(pokoj) == "Recepcja"){
         if(karta == false){
             Console.WriteLine("karta jest na biurku");
@@ -286,7 +280,8 @@ void Idz(string kierunek)
         pokoj = nastepnyPokoj;
         ZakonczTure();
         Rozejrzyj();
-        odkrycia[pokoj] = true;
+
+        odkrycia[pokoj-1] = true;
     }
     Console.WriteLine("Wykonany ruch w " + kierunek);
 }
