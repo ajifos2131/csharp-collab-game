@@ -80,6 +80,10 @@ while (true)
 
 void Start()
 {
+    for(int i=0; i<4; i++){
+        odkrycia[i] = false;
+    }
+    odkrycia[0] = true;
     liczbaRuchow = 0;
     pokoj = 1;
     energia = MAKS_ENERGIA;
@@ -280,7 +284,6 @@ void Idz(string kierunek)
         pokoj = nastepnyPokoj;
         ZakonczTure();
         Rozejrzyj();
-
         odkrycia[pokoj-1] = true;
     }
     Console.WriteLine("Wykonany ruch w " + kierunek);
