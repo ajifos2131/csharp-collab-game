@@ -60,4 +60,22 @@ class DziennikWyprawy{
         LiczbaWpisow = 0;
         _wpisy.Clear();
     }
+
+    public void dziennik()
+    {
+        Console.WriteLine("----- Historia Wypraw (Ostatnie do 3 wpisów) -----");
+        if (_wpisy.Count == 0)
+        {
+            Console.WriteLine("Brak zapisanych udanych kroków w dzienniku.");
+        }
+        else
+        {
+            // Ponieważ lista ma teraz ZAWSZE maksymalnie 3 elementy, 
+            // możemy po prostu wypisać je wszystkie po kolei od najstarszego do najnowszego
+            foreach (string wpis in _wpisy)
+            {
+                Console.WriteLine($"- {wpis}");
+            }
+        }
+    }
 }
